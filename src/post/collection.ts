@@ -21,6 +21,7 @@ export class PostCollection {
         data: {
           title: dto.title,
           description: dto.description,
+          userId: dto.userId,
         },
       });
 
