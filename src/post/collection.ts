@@ -34,4 +34,17 @@ export class PostCollection {
       });
     }
   }
+
+  async getPosts(_req: Request, res: Response) {
+    try {
+      const posts = await prisma.post.findMany();
+      return res.status(StatusCodes.ACCEPTED).json({
+        posts: posts,
+      });
+    } catch (error: any) {
+      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+        message: "something went wrong",
+      });
+    }
+  }
 }
