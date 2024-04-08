@@ -10,7 +10,6 @@ export class CreatePostDto {
   readonly description: string;
 
   @IsNotEmpty()
-  @IsString()
   readonly userId: number;
 
   constructor(d: CreatePostDto) {
